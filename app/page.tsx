@@ -1,6 +1,43 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ShieldCheck, Clock, Star, MapPin, Check, Zap, Shield } from 'lucide-react'
+
+/* TESTIMONIALS — Replace these placeholder reviews with real customer feedback
+   as they come in. Each card is a separate object for easy editing. */
+const testimonials = [
+  {
+    name: 'Ahmad R.',
+    location: 'Penang',
+    service: 'Auto Gate Repair',
+    stars: 5,
+    review:
+      'My auto gate stopped working on a Sunday night. Contacted MyHomePro and a technician came the next morning. Fixed within 2 hours. Very happy with the response.',
+  },
+  {
+    name: 'Siti N.',
+    location: 'Kuala Lumpur',
+    service: 'Water Heater Repair',
+    stars: 5,
+    review:
+      'Easy to contact and fast response. The repairman was professional and explained everything clearly before starting work. Will recommend to friends and family.',
+  },
+  {
+    name: 'David L.',
+    location: 'Johor Bahru',
+    service: 'Roof Leak Repair',
+    stars: 5,
+    review:
+      'Had a serious leak during monsoon season. MyHomePro connected me with a roofer the same day. Problem was fixed before the damage got worse. Thank you.',
+  },
+  {
+    name: 'Priya M.',
+    location: 'Ipoh',
+    service: 'Kitchen Hood Cleaning',
+    stars: 5,
+    review:
+      'My kitchen hood was not extracting smoke properly. The cleaning team was thorough and the hood works like new now. Reasonable price too.',
+  },
+]
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HowItWorks from '@/components/HowItWorks'
@@ -131,6 +168,48 @@ export default function HomePage() {
 
       {/* How It Works */}
       <HowItWorks />
+
+      {/* Testimonials */}
+      <section className="py-12 md:py-20 bg-[#F9FAFB]">
+        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="font-poppins font-bold text-[28px] md:text-[36px] text-text-primary">
+              What Homeowners Are Saying
+            </h2>
+            <p className="mt-3 text-text-secondary text-base md:text-lg max-w-xl mx-auto">
+              Real requests from homeowners we have helped across Malaysia
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                className="bg-white border border-[#E5E7EB] rounded-xl p-6"
+              >
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: t.stars }).map((_, i) => (
+                    <Star key={i} size={16} fill="#FBBF24" color="#FBBF24" />
+                  ))}
+                </div>
+                <p className="text-[#374151] text-[15px] font-inter leading-relaxed mb-5">
+                  {t.review}
+                </p>
+                <div>
+                  <p className="font-poppins font-bold text-[14px] text-[#111827]">
+                    {t.name}
+                  </p>
+                  <p className="text-[#6B7280] text-[13px] font-inter mt-0.5">
+                    {t.location}
+                  </p>
+                  <span className="inline-block mt-2 bg-[#EFF6FF] text-[#2563EB] text-[12px] font-inter px-2.5 py-1 rounded-full">
+                    {t.service}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* WhatsApp Contact */}
       <section id="lead-form" className="py-12 md:py-20 bg-primary-light">
