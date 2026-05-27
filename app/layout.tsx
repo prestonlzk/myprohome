@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -113,6 +114,7 @@ export default function RootLayout({
       </head>
       <body className="font-inter text-text-primary bg-white antialiased">
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   )
