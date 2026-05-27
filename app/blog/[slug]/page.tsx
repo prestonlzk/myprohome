@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Calendar, User } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import LeadForm from '@/components/LeadForm'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import { blogPosts } from '@/data/blog'
 
 interface PageProps {
@@ -408,19 +408,16 @@ export default function BlogPostPage({ params }: PageProps) {
             {/* Content */}
             <ContentComponent />
 
-            {/* Lead Form */}
+            {/* WhatsApp Contact */}
             <div className="mt-14 pt-10 border-t border-[#E5E7EB]">
-              <div className="text-center mb-8">
+              <div className="bg-primary-light rounded-2xl p-6 md:p-8 text-center">
                 <h2 className="font-poppins font-bold text-[24px] md:text-[30px] text-text-primary">
                   Need Help With Your Home?
                 </h2>
-                <p className="mt-3 text-text-secondary text-base">
-                  Submit a free request and we will connect you with a trusted professional
-                  in your area within 24 hours.
+                <p className="mt-3 mb-8 text-text-secondary text-base">
+                  Chat with us on WhatsApp — free to enquire, no obligation.
                 </p>
-              </div>
-              <div className="bg-primary-light rounded-2xl p-6 md:p-8">
-                <LeadForm />
+                <WhatsAppButton />
               </div>
             </div>
 

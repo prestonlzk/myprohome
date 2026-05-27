@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import TrustBar from '@/components/TrustBar'
 import HowItWorks from '@/components/HowItWorks'
 import ServiceCard from '@/components/ServiceCard'
-import LeadForm from '@/components/LeadForm'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import BlogCard from '@/components/BlogCard'
 import { services } from '@/data/services'
 import { blogPosts } from '@/data/blog'
@@ -119,22 +119,18 @@ export default function HomePage() {
       {/* How It Works */}
       <HowItWorks />
 
-      {/* Lead Form */}
+      {/* WhatsApp Contact */}
       <section id="lead-form" className="py-12 md:py-20 bg-primary-light">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8 md:mb-10">
-              <h2 className="font-poppins font-bold text-[28px] md:text-[36px] text-text-primary">
-                Submit Your Request — It&apos;s Free
-              </h2>
-              <p className="mt-3 text-text-secondary text-base md:text-lg">
-                Tell us what you need and we will find the right professional for you.
-                No payment required. No obligation.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-[#E5E7EB]">
-              <LeadForm />
-            </div>
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-poppins font-bold text-[28px] md:text-[36px] text-text-primary">
+              Get In Touch — It&apos;s Free
+            </h2>
+            <p className="mt-3 mb-8 text-text-secondary text-base md:text-lg">
+              Chat with us on WhatsApp and we will connect you with the right professional.
+              No forms, no waiting — just a quick message.
+            </p>
+            <WhatsAppButton />
           </div>
         </div>
       </section>

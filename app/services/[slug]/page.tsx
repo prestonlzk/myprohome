@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { CheckCircle } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import LeadForm from '@/components/LeadForm'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import FAQSection from '@/components/FAQSection'
 import ServiceCard from '@/components/ServiceCard'
 import { services } from '@/data/services'
@@ -93,22 +93,17 @@ export default function ServicePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Lead Form */}
-      <section id="lead-form" className="py-12 md:py-20 bg-primary-light">
+      {/* WhatsApp Contact */}
+      <section id="lead-form" className="py-12 md:py-20 bg-[#EFF6FF]">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="font-poppins font-bold text-[26px] md:text-[32px] text-text-primary">
-                Submit Your Request — It&apos;s Free
-              </h2>
-              <p className="mt-3 text-text-secondary text-base">
-                Tell us about your {service.name.toLowerCase()} problem and we will find the
-                right professional for you within 24 hours.
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-[#E5E7EB]">
-              <LeadForm defaultService={service.name} />
-            </div>
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="font-poppins font-bold text-[26px] md:text-[32px] text-text-primary">
+              Get Help With {service.name} Today
+            </h2>
+            <p className="mt-3 mb-8 text-text-secondary text-base">
+              Free to enquire. We arrange everything for you.
+            </p>
+            <WhatsAppButton service={service.slug} />
           </div>
         </div>
       </section>
