@@ -78,7 +78,7 @@ const jsonLd = {
   description:
     'MyHomePro connects Malaysian homeowners with trusted local service professionals for home repairs and maintenance.',
   url: 'https://www.myhomepro.com.my',
-  telephone: '+60123456789',
+  telephone: '+60124476688',
   email: 'hello@myhomepro.com.my',
   address: {
     '@type': 'PostalAddress',
@@ -87,6 +87,12 @@ const jsonLd = {
   areaServed: {
     '@type': 'Country',
     name: 'Malaysia',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+60124476688',
+    contactType: 'customer service',
+    availableLanguage: ['English', 'Malay', 'Chinese'],
   },
   serviceType: [
     'Auto Gate Repair',
@@ -107,6 +113,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        {/* REPLACE content value with your Google Search Console verification code */}
+        <meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_CODE" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = services.find((s) => s.slug === params.slug)
   if (!service) return {}
 
-  const title = `${service.name} in Malaysia — Get Free Help | MyHomePro`
+  const title = `${service.name} in Malaysia | MyHomePro`
   const description = service.description
 
   return {
@@ -50,8 +50,26 @@ export default function ServicePage({ params }: PageProps) {
     .filter(Boolean)
     .map((p) => p.trim())
 
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'MyHomePro',
+      url: 'https://myhomepro.com.my',
+      telephone: '+60124476688',
+      areaServed: 'Malaysia',
+    },
+    url: `https://myhomepro.com.my/services/${service.slug}`,
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <Header />
 
       {/* Hero */}

@@ -11,7 +11,7 @@ import { services } from '@/data/services'
 import { blogPosts } from '@/data/blog'
 
 export const metadata: Metadata = {
-  title: 'MyHomePro — Find Trusted Home Service Pros in Malaysia',
+  title: 'MyHomePro | Trusted Home Services in Malaysia',
   description:
     'MyHomePro connects Malaysian homeowners with trusted local service professionals. Free to request. Response within 24 hours. Serving all of Malaysia.',
   alternates: {
