@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
+
+const WA_URL =
+  'https://wa.me/60124476688?text=Hi%20MyHomePro!%20I%20need%20help%20with%20my%20home.'
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -10,21 +13,16 @@ export default function Header() {
   const navLinks = [
     { label: 'Services', href: '/#services' },
     { label: 'How It Works', href: '/#how-it-works' },
-    { label: 'Contact', href: '/#lead-form' },
   ]
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#E5E7EB]">
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-16">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center">
-            <span className="font-poppins font-bold text-xl text-primary">
-              MyHomePro
-            </span>
+            <span className="font-poppins font-bold text-xl text-primary">MyHomePro</span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -35,15 +33,17 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#lead-form"
-              className="bg-accent text-white font-poppins font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-green-700 transition-colors"
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#25D366] text-white font-semibold text-sm px-[18px] py-[10px] rounded-lg hover:bg-[#1fba58] transition-colors"
             >
-              Get Free Help
-            </Link>
+              <Phone size={15} />
+              012-447 6688
+            </a>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 rounded-md text-[#374151] hover:text-primary hover:bg-[#F3F4F6] transition-colors"
@@ -54,7 +54,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-[#E5E7EB] bg-white">
           <nav className="max-w-content mx-auto px-4 py-4 flex flex-col gap-1">
@@ -68,13 +67,16 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#lead-form"
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="mt-2 bg-accent text-white font-poppins font-semibold text-base px-5 py-3 rounded-lg text-center hover:bg-green-700 transition-colors"
+              className="mt-2 flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold text-base px-5 py-3 rounded-lg hover:bg-[#1fba58] transition-colors"
             >
-              Get Free Help Now
-            </Link>
+              <Phone size={16} />
+              012-447 6688
+            </a>
           </nav>
         </div>
       )}

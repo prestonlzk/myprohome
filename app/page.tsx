@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ShieldCheck, Clock, Star, MapPin } from 'lucide-react'
+import { ShieldCheck, Clock, Star, MapPin, Check, Zap, Shield } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import TrustBar from '@/components/TrustBar'
 import HowItWorks from '@/components/HowItWorks'
 import ServiceCard from '@/components/ServiceCard'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -76,7 +75,7 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 text-text-secondary text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
             Submit one request. We match you with the right local professional for any home
-            repair or maintenance job — fast, free, and with no obligation.
+            repair or maintenance job. Fast, free, and with no obligation.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -92,7 +91,21 @@ export default function HomePage() {
               Browse Services
             </Link>
           </div>
-          <TrustBar />
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            {[
+              { icon: Check, label: 'Free to Enquire' },
+              { icon: Zap, label: 'Reply Within 1 Hour' },
+              { icon: Shield, label: 'Trusted Across Malaysia' },
+            ].map(({ icon: Icon, label }) => (
+              <span
+                key={label}
+                className="inline-flex items-center gap-1.5 bg-[#F3F4F6] text-[#6B7280] text-[13px] font-inter px-3 py-1.5 rounded-full"
+              >
+                <Icon size={13} className="flex-shrink-0" />
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

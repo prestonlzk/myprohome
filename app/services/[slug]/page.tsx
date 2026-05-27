@@ -60,6 +60,9 @@ export default function ServicePage({ params }: PageProps) {
           <h1 className="font-poppins font-bold text-[32px] md:text-[48px] text-text-primary leading-tight max-w-3xl mx-auto">
             {service.name} in Malaysia
           </h1>
+          <p className="mt-3 text-[#6B7280] text-[14px] font-inter">
+            Serving homeowners across Malaysia · Fast response · Free to enquire
+          </p>
           <p className="mt-4 text-text-secondary text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             {service.description}
           </p>

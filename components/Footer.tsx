@@ -8,11 +8,8 @@ export default function Footer() {
     <footer className="bg-[#111827] text-white">
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Brand */}
           <div>
-            <span className="font-poppins font-bold text-xl text-primary">
-              MyHomePro
-            </span>
+            <span className="font-poppins font-bold text-xl text-primary">MyHomePro</span>
             <p className="mt-2 text-[#9CA3AF] text-sm">Home services, sorted.</p>
             <p className="mt-4 text-[#9CA3AF] text-sm leading-relaxed">
               Connecting Malaysian homeowners with trusted local service professionals
@@ -20,13 +17,13 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex flex-col gap-2">
               <a
-                href="https://wa.me/60123456789"
+                href="https://wa.me/60124476688"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[#D1D5DB] hover:text-white text-sm transition-colors"
               >
                 <Phone size={15} />
-                <span>+60 12-345 6789</span>
+                <span>012-447 6688</span>
               </a>
               <a
                 href="mailto:hello@myhomepro.com.my"
@@ -38,7 +35,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="font-poppins font-semibold text-white text-sm uppercase tracking-wider mb-4">
               Services
@@ -64,33 +60,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick links */}
           <div>
             <h3 className="font-poppins font-semibold text-white text-sm uppercase tracking-wider mb-4">
               Quick Links
             </h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <Link
-                  href="/#how-it-works"
-                  className="text-[#9CA3AF] hover:text-white text-sm transition-colors"
-                >
+                <Link href="/#how-it-works" className="text-[#9CA3AF] hover:text-white text-sm transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className="text-[#9CA3AF] hover:text-white text-sm transition-colors"
-                >
+                <Link href="/blog" className="text-[#9CA3AF] hover:text-white text-sm transition-colors">
                   Blog &amp; Tips
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/#lead-form"
-                  className="text-[#9CA3AF] hover:text-white text-sm transition-colors"
-                >
+                <Link href="/#lead-form" className="text-[#9CA3AF] hover:text-white text-sm transition-colors">
                   Submit a Request
                 </Link>
               </li>
@@ -98,9 +84,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-[#374151] text-center">
-          <p className="text-[#6B7280] text-sm">
-            &copy; {currentYear} MyHomePro. All rights reserved. | Serving homeowners across Malaysia.
+        <div className="mt-10 pt-6 border-t border-[#374151]">
+          <div className="flex flex-col items-center gap-2 mb-4 text-center">
+            <p className="text-[#9CA3AF] text-[13px] font-inter">
+              Serving: Penang, Kuala Lumpur, Johor Bahru, Ipoh, Shah Alam, and all of Malaysia
+            </p>
+            <p className="text-[#9CA3AF] text-[13px] font-inter">
+              Response hours: Monday to Sunday, 8am to 10pm
+            </p>
+            <p className="text-[#9CA3AF] text-[13px] font-inter">
+              MyHomePro connects Malaysian homeowners with trusted local service professionals.
+            </p>
+          </div>
+          <p className="text-[#6B7280] text-sm text-center">
+            &copy; {currentYear} MyHomePro. All rights reserved. | myhomepro.com.my
           </p>
         </div>
       </div>

@@ -13,9 +13,9 @@ const steps = [
   },
   {
     number: '03',
-    title: 'They Contact You Directly',
+    title: 'Get Contacted Directly',
     description:
-      'The right professional will reach out to you within 24 hours to discuss your job, arrange a visit, and provide a quote.',
+      'The pro reaches out to you on WhatsApp or by phone to discuss the job and arrange a visit.',
   },
 ]
 
